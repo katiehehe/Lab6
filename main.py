@@ -8,7 +8,11 @@ def encode(string):
 
 
 def decode(string):
-    pass
+    before = ''
+    for digit in string:
+        # subtract 3 from each digit and handle underflow by adding 10 before taking mod 10
+        before += str((int(digit) - 3 + 10) % 10)
+    return before
 
 
 if __name__ == '__main__':
